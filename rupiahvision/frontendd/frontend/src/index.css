@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-ink: #0B0F14;
+  --c-surface: #12181F;
+  --c-surface-raised: #1A222B;
+  --c-surface-hover: #202B36;
+  --c-line: #232C36;
+  --c-text-primary: #E8EDF2;
+  --c-text-muted: #8B96A5;
+  --c-text-faint: #5B6672;
+}
+
+html.light {
+  --c-ink: #F4F6F8;
+  --c-surface: #FFFFFF;
+  --c-surface-raised: #F6F8FA;
+  --c-surface-hover: #EEF2F5;
+  --c-line: #E1E6EB;
+  --c-text-primary: #101418;
+  --c-text-muted: #5B6672;
+  --c-text-faint: #8B96A5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink text-text-primary font-body antialiased transition-colors duration-200;
+}
+
+::selection {
+  background: #2BAE8F;
+  color: #0B0F14;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-line);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2BAE8F;
+}
+
+@keyframes pulse-thread {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.animate-pulse-thread {
+  animation: pulse-thread 2.4s ease-in-out infinite;
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+.animate-scan {
+  animation: scan-line 1.8s ease-in-out infinite;
+}
+
+.card {
+  @apply bg-surface border border-line rounded-2xl shadow-soft;
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-thread-tealSoft focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+}

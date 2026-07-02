@@ -1,0 +1,9 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+ultralytics==8.4.84
+pillow==10.4.0
+# Catatan: JANGAN tambahkan opencv-python-headless di sini. ultralytics sudah
+# menarik opencv-python secara otomatis; kalau dua-duanya dipasang, keduanya
+# berebut menulis ke folder cv2 yang sama dan sering bikin instalasi gagal di
+# Windows dengan error "WinError 32: file sedang dipakai proses lain".
